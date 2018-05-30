@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello Handlebars - handlebarstut3</title>
+    <script src="handlebars-v4.0.10.js"></script>
+    <script src="handlebarstut3.registeredHelpers.js"></script>
+</head>
+
+<body>
+
+    <div id="contentDiv"></div>
+    <script id="the-template" type="text/x-handlebars-template">
+        {{!-- 7. Block helper that receives the name value for the radio buttons --}}
+        <div> </div>
+        {{#makeRadio "size"}} Small Medium Large {{/makeRadio}}
+        <div> </div>
+        {{!-- 8. You can place an {{else}} tag in your block helpers to create alternative template functions. Here well check for
+        equality of 2 passed values --}}
+        <hr/>
+        <div></div>
+        Running registered helper function #areEqual 1 1
+        <div> </div>
+        {{#areEqual 1 1}}
+        <div></div>
+        Numbers are equal
+        <div> </div>
+        {{else}}
+        <div> </div>
+        Numbers are not equal
+        <div> </div>
+        {{/areEqual}}
+        <hr/>
+        <div> </div>
+        {{!-- 9. Handlebars has a built in if conditional that we can use to display different results --}}
+        <div> </div>
+        {{#if "isActive"}}
+        <img src="ntt-logo.png" alt="Active">
+        <div> </div>
+        {{else}}
+        <div> </div>
+        <img src="ntt-logo-horz.png" alt="Inactive">
+        <div> </div>
+        {{/if}}
+
+    </script>
+
+    <script type="text/javascript" src="handlebarstut3.js"></script>
+</body>
+
+</html>

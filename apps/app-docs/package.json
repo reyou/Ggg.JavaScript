@@ -1,0 +1,15 @@
+{
+  "name": "gggjavascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Ggg.Core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aozdemir",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^1.7.1",
+    "request": "^2.81.0"
+  }
+}

@@ -1,0 +1,30 @@
+<body>
+    <h1>
+
+    </h1>
+    <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers">Using_Service_Workers</a>
+        When we come to call the imgLoad() function, we call it with the url to the image we want to load, as we might expect, but
+        the rest of the code is a little different:
+    </p>
+    <div>
+
+    </div>
+    <script src="imgLoad.js"></script>
+    <script>
+        console.log("Running imgLoad.html");
+    </script>
+    <script>
+        var body = document.querySelector('body');
+        var myImage = new Image();
+        imgLoad('myLittleVader.jpg').then(function (response) {
+            var imageURL = window.URL.createObjectURL(response);
+            myImage.src = imageURL;
+            body.appendChild(myImage);
+            console.log("image has been loaded.");
+        }, function (Error) {
+            console.log(Error);
+        });
+
+    </script>
+</body>

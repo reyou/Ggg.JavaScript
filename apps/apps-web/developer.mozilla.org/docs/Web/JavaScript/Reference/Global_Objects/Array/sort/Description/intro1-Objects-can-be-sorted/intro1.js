@@ -36,3 +36,37 @@ console.log("\n\nSorted By: nameA < nameB\n");
 for (let i = 0; i < items.length; i++) {
   console.log(JSON.stringify(items[i]));
 }
+
+/*
+Sorted By: a.value - b.value
+
+intro1.js:16
+{"name":"The","value":-12}
+intro1.js:18
+{"name":"Magnetic","value":13}
+intro1.js:18
+{"name":"Edward","value":21}
+intro1.js:18
+{"name":"Sharpe","value":37}
+intro1.js:18
+{"name":"Zeros","value":37}
+intro1.js:18
+{"name":"And","value":45}
+intro1.js:18
+
+
+Sorted By: nameA < nameB
+
+intro1.js:35
+{"name":"And","value":45}
+intro1.js:37
+{"name":"Edward","value":21}
+intro1.js:37
+{"name":"Magnetic","value":13}
+intro1.js:37
+{"name":"Sharpe","value":37}
+intro1.js:37
+{"name":"The","value":-12}
+intro1.js:37
+{"name":"Zeros","value":37}
+*/

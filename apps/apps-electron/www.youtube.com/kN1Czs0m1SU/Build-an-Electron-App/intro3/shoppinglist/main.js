@@ -10,7 +10,11 @@ let addWindow;
 // Listen for the be app to be ready
 app.on("ready", function () {
     // Create new window
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     // Load html file into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, "mainWindow.html"),
@@ -36,6 +40,9 @@ function createAddWindow() {
     addWindow = new BrowserWindow({
         width: 300,
         height: 200,
+        webPreferences: {
+            nodeIntegration: true
+        },
         title: "Add Shopping List Item"
     });
     // Load html file into window

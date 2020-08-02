@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     main: "./main.js",
     "pdf.worker": "pdfjs-dist/build/pdf.worker.entry",
+    "pdf.viewer": "pdfjs-dist/web/pdf_viewer",
   },
   mode: "none",
   output: {
@@ -17,6 +18,13 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [{ context: "public", from: ".", to: "." }],
+      patterns: [
+        {
+          context: "",
+          from: "node_modules/pdfjs-dist/web/pdf_viewer.css",
+          to: ".",
+        },
+      ],
     }),
   ],
   devServer: {

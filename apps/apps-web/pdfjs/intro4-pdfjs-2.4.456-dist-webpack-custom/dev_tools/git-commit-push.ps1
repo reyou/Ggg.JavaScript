@@ -12,4 +12,5 @@ $commitMessage = """" + $commitMessage + """"
 Invoke-Expression "git add ."
 Invoke-Expression "git commit -a -m $commitMessage"
 Invoke-Expression "git push"
+Invoke-Expression "git status"
  

@@ -1,4 +1,4 @@
-param($commitMessage = 'updates made to intro4-pdfjs-2.4.456-dist-webpack-custom')
+param($commitMessage = 'sample pdf uploaded')
 Clear-Host
 [System.IO.FileInfo]$currentFolder = $MyInvocation.MyCommand.Path
 

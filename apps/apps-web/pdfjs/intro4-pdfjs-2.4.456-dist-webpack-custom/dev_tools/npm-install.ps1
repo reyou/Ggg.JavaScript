@@ -13,6 +13,7 @@ Invoke-Expression "npm install webpack-dev-server --save-dev"
 Invoke-Expression "npm install copy-webpack-plugin --save-dev"
 Invoke-Expression "npm install typescript --save-dev"
 Invoke-Expression "npm install ts-loader --save-dev"
+Invoke-Expression "npm install @types/pdfjs-dist --save-dev"
 Invoke-Expression "code package.json"
 
 # set location back to dev_tools

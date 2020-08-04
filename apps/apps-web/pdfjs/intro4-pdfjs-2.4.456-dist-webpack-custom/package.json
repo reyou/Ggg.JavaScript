@@ -10,11 +10,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/pdfjs-dist": "^2.1.5",
     "copy-webpack-plugin": "^6.0.3",
     "ts-loader": "^8.0.2",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^2.4.456"
   }
 }

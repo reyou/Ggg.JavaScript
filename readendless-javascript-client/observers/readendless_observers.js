@@ -4,7 +4,7 @@ let options = {
   rootMargin: '0px',
   threshold: 1.0
 };
-let callback = (entries, observer) => {
+let intersectionCallback = (entries, observer) => {
   entries.forEach((entry) => {
     ReadEndlessInOut.consoleLog({
       title: 'IntersectionObserver callback',
@@ -26,4 +26,4 @@ let callback = (entries, observer) => {
   });
 };
 
-let observer = new IntersectionObserver(callback, options);
+let observer = new IntersectionObserver(intersectionCallback, options);

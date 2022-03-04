@@ -1,4 +1,4 @@
-export class ReadEndlessInOut {
+class ReadEndlessInOut {
   static consoleTimeStartEnd(title, methodToRun) {
     console.time(title);
     methodToRun();
@@ -11,5 +11,9 @@ export class ReadEndlessInOut {
 
   static alert(title) {
     window.alert(title);
+  }
+
+  static consoleLog(log_item) {
+    window.console.log(log_item);
   }
 }

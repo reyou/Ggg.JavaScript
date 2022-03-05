@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Determine Vertical Scroll Percentage</title>
+    <style>
+      .box {
+        background-color: cornflowerblue;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Determine Vertical Scroll Percentage</h1>
+    <div id="upperElements"></div>
+    <textarea id="output" style="width: 600px; height: 200px"> </textarea>
+    <div id="bottomElements"></div>
+    <script>
+      function getScrollPercent() {
+        var h = document.documentElement,
+          b = document.body,
+          st = 'scrollTop',
+          sh = 'scrollHeight';
+        return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+      }
+      function documentEventListener() {
+        let scroll = getScrollPercent();
+        let output = document.getElementById('output');
+        output.value = scroll;
+      }
+      document.addEventListener('scroll', documentEventListener, false);
+
+      // create sample elements to create scroll
+      function createElements() {
+        let upperElements = document.getElementById('upperElements');
+        let bottomElements = document.getElementById('bottomElements');
+        for (let i = 0; i < 50; i++) {
+          let newElem = document.createElement('div');
+          newElem.className = 'box';
+          upperElements.appendChild(newElem);
+        }
+        for (let i = 0; i < 50; i++) {
+          let newElem = document.createElement('div');
+          newElem.className = 'box';
+          bottomElements.appendChild(newElem);
+        }
+      }
+      createElements();
+    </script>
+  </body>
+</html>

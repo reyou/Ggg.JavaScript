@@ -19,7 +19,13 @@ function test_console_table() {
   });
 }
 
+function test_console_trace() {
+  ReadEndlessInOut.consoleTrace();
+}
+
 // TESTS
-/**/
+/*
 test_consoleTimeStartEnd();
 test_console_table();
+*/
+test_console_trace();

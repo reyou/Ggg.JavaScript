@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web APIs > History</title>
+  </head>
+  <body>
+    <h1>Web APIs > History</h1>
+    <div>Current Date: <input id="currentDate" type="text" /></div>
+    <div>Length: <input id="historyLength" type="text" /></div>
+    <p>Back: <button id="backButton">Back</button></p>
+    <p>
+      Next: <a href="readendless_history_2.html">readendless_history_2.html</a>
+    </p>
+    <p>
+      Steps: <input id="steps" type="text" value="0" />
+      <button id="navigateSteps">Navigate Steps (-N...N)</button>
+      <div>
+        0: Refresh same page
+      </div>
+    </p>
+    <p>
+      Push State:<input id="pushStateText" type="text" value="fake-page" >
+      <button id="pushState">Push State</button>
+    </p>
+    <p>
+      Replace State:<input id="replaceStateText" type="text" value="replace-page" >
+      <button id="replaceState">Replace State</button>
+    </p>
+    <p id="aboutPage">
+      Load About:
+      <button id="loadAbout">Load About</button>
+    </p>
+    <p>
+      Pop State:
+      <textarea id="popStateLog" style="width: 500px; height: 100px;"></textarea>
+    </p>
+    <script src="./readendless_history.js"></script>
+    <script src="../dateTime/readendless_date_time.js"></script>
+    <script>
+      //
+      let date = ReadEndlessDataTime.getCurrentTime();
+      document.getElementById('currentDate').value = date;
+      //
+      let backButton = document.getElementById('backButton');
+      backButton.addEventListener('click', () => {
+        ReadEndlessHistory.navigateBack();
+      });
+      //
+      let historyLength = document.getElementById('historyLength');
+      historyLength.value = ReadEndlessHistory.getLength();
+      //
+      let navigateSteps = document.getElementById('navigateSteps');
+      navigateSteps.addEventListener('click', () => {
+        let steps = document.getElementById('steps').value;
+        ReadEndlessHistory.navigateSteps(steps);
+      });
+      //
+      let pushState = document.getElementById("pushState");
+      pushState.addEventListener("click", ()=>{
+        let pushStateText = document.getElementById("pushStateText").value;
+        ReadEndlessHistory.pushState(pushStateText);
+      })
+      // 
+      let loadAbout = document.getElementById("loadAbout");
+      loadAbout.addEventListener("click", ()=>{
+        ReadEndlessHistory.pushState("about", "some data");
+        document.getElementById("aboutPage").innerHTML = "<h2>About page Loaded! Check the URL!</h2>";
+      });
+      //
+      ReadEndlessHistory.listenStateChange((e)=>{
+          console.log(e);
+          let popStateLog = document.getElementById("popStateLog");
+          popStateLog.value = JSON.stringify({
+            time: ReadEndlessDataTime.getCurrentTime(),
+            event: e,
+            state: e.state
+          });
+      });
+      //
+      let replaceState = document.getElementById("replaceState");
+      replaceState.addEventListener("click", ()=>{
+        let replaceStateText = document.getElementById("replaceStateText").value;
+        ReadEndlessHistory.replaceState(replaceStateText, "some replace data");
+      })
+    </script>
+  </body>
+</html>

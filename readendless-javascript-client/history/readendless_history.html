@@ -79,6 +79,13 @@
             state: e.state
           });
       });
+      ReadEndlessHistory.listenLocationChange((e)=>{
+          console.log({
+            title: "listenLocationChange",
+            event: e
+          });
+          
+      });
       //
       let replaceState = document.getElementById("replaceState");
       replaceState.addEventListener("click", ()=>{

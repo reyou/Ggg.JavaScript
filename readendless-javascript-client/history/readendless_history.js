@@ -4,6 +4,11 @@ class ReadEndlessHistory {
       listener(e);
     });
   }
+  static listenLocationChange(listener) {
+    window.addEventListener('locationchange', function (e) {
+      listener(e);
+    });
+  }
   static getLength() {
     return history.length;
   }
@@ -20,6 +25,7 @@ class ReadEndlessHistory {
   }
   static replaceState(url, data = null) {
     history.replaceState(data, null, url);
+    window.dispatchEvent(new Event('locationchange'));
   }
 
   static popState() {}

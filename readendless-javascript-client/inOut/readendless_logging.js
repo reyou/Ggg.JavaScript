@@ -1,8 +1,12 @@
-export class ReadEndlessInOut {
+export class ReadEndlessLogging {
   static consoleTimeStartEnd(title, methodToRun) {
     console.time(title);
     methodToRun();
     console.timeEnd(title);
+  }
+
+  static log(value) {
+    console.log(value);
   }
 
   static consoleTable(log_item) {

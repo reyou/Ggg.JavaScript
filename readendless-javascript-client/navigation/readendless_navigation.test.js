@@ -69,12 +69,21 @@ function test_fromFullUrl() {
   }
 }
 
-test_fromFullUrl();
+function test_url() {
+  const myUrlWithParams = new URL('https://www.example.dev/');
+  myUrlWithParams.searchParams.append('city', 'Rome');
+  myUrlWithParams.searchParams.append('price', '200');
+  console.log(myUrlWithParams.href);
+  debugger;
+}
+
+test_buildUrlSearchParams();
 debugger;
+test_url();
+test_fromFullUrl();
 test_deleteQueryParam();
 test_setQueryParam();
 test_appendQueryParam();
 test_getAllQueryParamValue();
 test_getQueryParamValue();
 test_hasQueryParam();
-test_buildUrlSearchParams();

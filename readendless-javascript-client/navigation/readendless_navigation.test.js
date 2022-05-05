@@ -77,9 +77,9 @@ function test_url() {
   debugger;
 }
 
-test_buildUrlSearchParams();
-debugger;
 test_url();
+debugger;
+test_buildUrlSearchParams();
 test_fromFullUrl();
 test_deleteQueryParam();
 test_setQueryParam();

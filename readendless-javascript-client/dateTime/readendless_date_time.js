@@ -1,4 +1,4 @@
-class ReadEndlessDataTime {
+export class ReadEndlessDateTime {
   static getCurrentDate() {
     let today = new Date();
     let date =
@@ -14,5 +14,9 @@ class ReadEndlessDataTime {
     let time =
       today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     return time;
+  }
+
+  static toISOString() {
+    return new Date().toISOString();
   }
 }
